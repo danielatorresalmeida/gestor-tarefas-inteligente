@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Tarefas Inteligente</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div>
+          <h1>Gestor de Tarefas Inteligente</h1>
+          <p class="subtitle">Organiza as tuas tarefas de forma simples</p>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="themeToggle" class="btn secondary">Mudar Tema</button>
+          <button id="logoutBtn" class="btn danger hidden">Sair</button>
+        </div>
+      </header>
+
+      <!-- LOGIN -->
+      <section id="loginSection" class="card">
+        <h2>Iniciar Sessão</h2>
+        <form id="loginForm" class="form">
+          <div class="form-group">
+            <label for="username">Nome do utilizador</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Escreve o teu nome"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn primary">Entrar</button>
+        </form>
+      </section>
+
+      <!-- APP -->
+      <section id="appSection" class="hidden">
+        <!-- PAINEL SUPERIOR -->
+        <div class="grid-two">
+          <div class="card">
+            <h2 id="welcomeMessage">Olá!</h2>
+            <p>Bem-vindo(a) ao teu gestor de tarefas.</p>
+          </div>
+
+          <div class="card">
+            <h2>Data e Hora</h2>
+            <p id="currentDate">--/--/----</p>
+            <p id="currentTime">--:--:--</p>
+          </div>
+        </div>
+
+        <!-- API -->
+        <section class="card">
+          <h2>Informação Externa</h2>
+          <p class="section-text">Exemplo: estado do tempo</p>
+
+          <div id="weatherBox" class="weather-box">
+            <p><strong>Cidade:</strong> <span id="cityName">--</span></p>
+            <p>
+              <strong>Temperatura:</strong> <span id="temperature">--</span>
+            </p>
+            <p>
+              <strong>Descrição:</strong>
+              <span id="weatherDescription">--</span>
+            </p>
+          </div>
+          <!-- Fonte dos dados meteorológicos -->
+          <p class="section-text">
+            Dados meteorológicos:
+            <a
+              href="https://open-meteo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open-Meteo
+            </a>
+          </p>
+        </section>
+
+        <!-- FORM TAREFAS -->
+        <section class="card">
+          <h2>Adicionar / Editar Tarefa</h2>
+
+          <p id="taskFeedback" role="status" aria-live="polite"></p>
+
+          <form id="taskForm" class="form">
+            <input type="hidden" id="taskId" />
+
+            <div class="form-group">
+              <label for="taskInput">Tarefa</label>
+
+              <input
+                type="text"
+                id="taskInput"
+                name="task"
+                placeholder="Escreve uma tarefa"
+                required
+              />
+            </div>
+
+            <!-- Data de criação -->
+            <div class="form-group">
+              <label for="createdDate">Data de criação</label>
+              <input type="text" id="createdDate" readonly />
+            </div>
+
+            <!-- Data limite -->
+            <div class="form-group">
+              <label for="taskDate">Data limite (opcional)</label>
+              <input type="date" id="taskDate" name="date" />
+            </div>
+
+            <button type="submit" class="btn primary">Guardar Tarefa</button>
+          </form>
+        </section>
+
+        <!-- CONTADORES -->
+        <section class="grid-three">
+          <div class="card counter">
+            <h3>Total</h3>
+            <p id="totalTasks">0</p>
+          </div>
+
+          <div class="card counter">
+            <h3>Ativas</h3>
+            <p id="activeTasks">0</p>
+          </div>
+
+          <div class="card counter">
+            <h3>Concluídas</h3>
+            <p id="completedTasks">0</p>
+          </div>
+        </section>
+
+        <!-- FILTROS -->
+        <section class="card">
+          <h2>Filtrar Tarefas</h2>
+          <div class="filters">
+            <button class="btn filter-btn active" data-filter="all">
+              Todas
+            </button>
+            <button class="btn filter-btn" data-filter="active">Ativas</button>
+            <button class="btn filter-btn" data-filter="completed">
+              Concluídas
+            </button>
+          </div>
+        </section>
+
+        <!-- LISTA DE TAREFAS -->
+        <section class="card">
+          <h2>Lista de Tarefas</h2>
+          <ul id="taskList" class="task-list"></ul>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>
