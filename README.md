@@ -54,6 +54,8 @@ Numa próxima versão, gostaria de acrescentar algumas funcionalidades que permi
 - **Controlo de prazos:** identificar tarefas em atraso e distinguir as que foram concluídas dentro ou fora do prazo.
 - **Histórico de alterações:** registar as mudanças de data limite, incluindo a data anterior, a nova data e o motivo da alteração.
 - **Gestão por utilizador:** associar as tarefas aos respetivos criadores e permitir que cada um faça alterações às suas tarefas.
+- **Suporte a vários idiomas:** permitir alternar entre português e inglês, incluindo os textos da interface, mensagens de feedback e informações apresentadas.
+
 
 Estas melhorias permitiriam desenvolver a aplicação de forma gradual, mantendo como base as funcionalidades já implementadas.
 
