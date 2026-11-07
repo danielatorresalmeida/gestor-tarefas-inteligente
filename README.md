@@ -1,5 +1,11 @@
 # Gestor de Tarefas Inteligente
 
+## Aplicação
+
+O projeto está disponível em:
+https://danielatorresalmeida.github.io/gestor-tarefas-inteligente/
+
+
 Projeto desenvolvido durante as aulas de **Programação Web**, no âmbito da formação Software Developer do CESAE Digital, para colocar em prática os conhecimentos adquiridos em JavaScript.
 
 A aplicação permite organizar tarefas, acompanhar o seu estado e definir datas limite. Foi desenvolvida com HTML, CSS e JavaScript.
